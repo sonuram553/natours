@@ -1,4 +1,5 @@
 @import "./abstracts/variables";
+@import "./abstracts/mixins";
 
 @import "./base/reset";
 @import "./base/animations";
@@ -6,4 +7,10 @@
 
 @import "./components/button";
 
+@import "./layout/grid";
 @import "./layout/header";
+
+.grid-test {
+  font-size: 1.6rem;
+  color: white;
+}
