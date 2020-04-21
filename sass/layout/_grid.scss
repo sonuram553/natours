@@ -12,7 +12,7 @@
   }
 
   [class^="col"] {
-    background-color: red;
+    //background-color: red;
     float: left;
     &:not(:last-of-type) {
       margin-right: $gutter-horizontal;
