@@ -293,6 +293,51 @@ body {
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
+.composition {
+  position: relative;
+}
+
+.composition__photo {
+  width: 55%;
+  -webkit-box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  position: absolute;
+  -webkit-transition: all 0.12s ease-out;
+  transition: all 0.12s ease-out;
+  outline-offset: 2rem;
+}
+
+.composition__photo--p1 {
+  top: -1.5rem;
+}
+
+.composition__photo--p2 {
+  top: 4rem;
+  right: 0;
+}
+
+.composition__photo--p3 {
+  top: 9rem;
+  left: 8rem;
+}
+
+.composition__photo:hover {
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  z-index: 5;
+  outline: 1.5rem solid #55c57a;
+  -webkit-box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5);
+}
+
+.composition:hover .composition__photo:not(:hover) {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto 5rem;
