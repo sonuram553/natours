@@ -338,6 +338,38 @@ body {
           transform: scale(0.95);
 }
 
+.feature-box {
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 1.4rem;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 3px;
+  -webkit-transition: -webkit-transform 0.12s ease-out;
+  transition: -webkit-transform 0.12s ease-out;
+  transition: transform 0.12s ease-out;
+  transition: transform 0.12s ease-out, -webkit-transform 0.12s ease-out;
+  -webkit-box-shadow: 0 1rem 1.4rem rgba(255, 255, 255, 0.1);
+          box-shadow: 0 1rem 1.4rem rgba(255, 255, 255, 0.1);
+}
+
+.feature-box:hover {
+  -webkit-transform: translateY(-1rem) scale(1.03);
+          transform: translateY(-1rem) scale(1.03);
+  -webkit-transition: -webkit-transform 0.12s ease-in;
+  transition: -webkit-transform 0.12s ease-in;
+  transition: transform 0.12s ease-in;
+  transition: transform 0.12s ease-in, -webkit-transform 0.12s ease-in;
+}
+
+.feature-box__icon {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto 5rem;
@@ -421,7 +453,22 @@ body {
   margin-top: -15vh;
 }
 
-.grid-test {
+.section-features {
+  padding: 15rem 0;
+  margin-top: -9rem;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7)), to(rgba(40, 180, 133, 0.7))), url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/nat-4.jpg);
+  background-size: cover;
+  -webkit-transform: skewY(-5deg);
+          transform: skewY(-5deg);
+}
+
+.section-features > * {
+  -webkit-transform: skewY(5deg);
+          transform: skewY(5deg);
+}
+
+/* .grid-test {
   font-size: 1.6rem;
   color: white;
-}
+} */
