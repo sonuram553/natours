@@ -1,0 +1,59 @@
+$card-animation-duration: 0.7s;
+
+.card {
+  position: relative;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 40rem;
+
+  &__side {
+    height: 40rem;
+    width: 100%;
+    position: absolute;
+    font-size: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 1rem 3rem rgba($color: #000000, $alpha: 0.2);
+    transition: all $card-animation-duration ease-out;
+
+    &--front {
+      z-index: 10;
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transition: all $card-animation-duration ease-in;
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    transition: all $card-animation-duration ease-in;
+    transform: rotateY(0);
+  }
+}
