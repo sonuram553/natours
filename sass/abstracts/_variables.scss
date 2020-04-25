@@ -19,3 +19,23 @@ $default-font-size: 1.6rem;
 $grid-width: 114rem;
 $gutter-vertical: 5rem;
 $gutter-horizontal: 3rem;
+
+//Gradients
+
+$orangeGradient: linear-gradient(
+  to right bottom,
+  $color-secondary-light,
+  $color-secondary-dark
+);
+
+$greenGradient: linear-gradient(
+  to right bottom,
+  $color-primary-light,
+  $color-primary-dark
+);
+
+$blueGradient: linear-gradient(
+  to right bottom,
+  $color-tertiary-light,
+  $color-tertiary-dark
+);
