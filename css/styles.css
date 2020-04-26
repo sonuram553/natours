@@ -543,6 +543,90 @@ body {
   font-weight: 300;
 }
 
+.story {
+  width: 60%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: 1.6rem;
+  -webkit-transform: skewX(-12deg);
+          transform: skewX(-12deg);
+  margin-bottom: 8rem;
+  padding: 6rem;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.story > * {
+  -webkit-transform: skewX(12deg);
+          transform: skewX(12deg);
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  margin-right: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.story__image {
+  height: 100%;
+  -webkit-transform: translateX(-3rem) scale(1.3);
+          transform: translateX(-3rem) scale(1.3);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.story__caption {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.story:hover .story__caption {
+  top: 50%;
+  opacity: 1;
+}
+
+.story:hover .story__image {
+  -webkit-transform: translateX(-3rem) scale(1);
+          transform: translateX(-3rem) scale(1);
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.bg-video__content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto 5rem;
@@ -645,6 +729,11 @@ body {
   background-color: #f7f7f7;
   padding: 22rem 0 12rem;
   margin-top: -7rem;
+}
+
+.section-stories {
+  position: relative;
+  padding: 10rem 0;
 }
 
 /* .grid-test {
