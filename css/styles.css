@@ -200,14 +200,17 @@ body {
   margin-bottom: 1rem;
 }
 
+.btn,
 .btn:link,
 .btn:visited,
 .btn::after {
   display: inline-block;
   border-radius: 3rem;
   font-size: 1.6rem;
+  border: none;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   padding: 1.5rem 4rem;
@@ -217,6 +220,14 @@ body {
   position: relative;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn:hover {
@@ -636,11 +647,13 @@ body {
   font-size: 1.5rem;
   display: block;
   width: 90%;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1.8rem;
   border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.6);
   border: none;
   border-bottom: 3px solid transparent;
+  -webkit-transition: border 0.15s ease-out;
+  transition: border 0.15s ease-out;
 }
 
 .form__input:focus {
@@ -648,6 +661,8 @@ body {
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
   border-bottom: 3px solid #55c57a;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 
 .form__input:focus:invalid {
@@ -668,6 +683,72 @@ body {
 
 .form__input::placeholder {
   color: #999;
+}
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-left: 1.8rem;
+  margin-top: 4px;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+          transform: translateY(-4rem);
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.form__radio-group {
+  display: inline-block;
+  width: 45%;
+}
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.form__radio-input {
+  display: none;
+}
+
+.form__radio-button {
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 4.5px solid #55c57a;
+  vertical-align: top;
+  margin-right: 5px;
+  position: relative;
+}
+
+.form__radio-button::after {
+  content: "";
+  opacity: 0;
+  height: 1.3rem;
+  width: 1.3rem;
+  background: #55c57a;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.15s ease-out;
+  transition: opacity 0.15s ease-out;
+}
+
+.form__radio-input:checked + .form__radio-label > .form__radio-button::after {
+  opacity: 1;
+  -webkit-transition: opacity 0.15s ease-in;
+  transition: opacity 0.15s ease-in;
 }
 
 .row {
@@ -780,15 +861,18 @@ body {
 }
 
 .section-book {
-  padding: 13rem 0;
+  padding: 12rem 0;
   background: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
   background: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.section-book .submit-box {
+  margin-top: 4rem;
 }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
-  height: 40rem;
   width: 70%;
   margin: 0 auto;
   border-radius: 3px;

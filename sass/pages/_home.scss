@@ -34,8 +34,12 @@
 }
 
 .section-book {
-  padding: 13rem 0;
+  padding: 12rem 0;
   background: $greenGradient;
+
+  .submit-box{
+    margin-top: 4rem;
+  }
 }
 
 .book {
@@ -46,7 +50,7 @@
     ),
     url(../img/nat-10.jpg);
   background-size: cover;
-  height: 40rem;
+  //height: 40rem;
   width: 70%;
   margin: 0 auto;
   border-radius: 3px;
