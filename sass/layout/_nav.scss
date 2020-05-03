@@ -1,3 +1,5 @@
+$nav-transition-duration: 0.15s;
+
 .nav {
   nav {
     height: 100vh;
@@ -16,11 +18,12 @@
 
   &__button {
     background: white;
-    display: inline-block;
-    height: 7rem;
-    width: 7rem;
+    display: inline-flex;
+    height: 6rem;
+    width: 6rem;
     border-radius: 50%;
     position: fixed;
+    cursor: pointer;
     z-index: 60;
     right: 4.5rem;
     top: 4.5rem;
@@ -28,8 +31,8 @@
   }
 
   &__background {
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
 
     position: fixed;
@@ -89,5 +92,60 @@
     transition: opacity 0.3s ease-in;
     opacity: 1;
     width: 100vw;
+  }
+
+  //ICON
+  &__icon {
+    position: relative;
+    margin: auto;
+
+    &,
+    &::after,
+    &::before {
+      height: 2px;
+      width: 3rem;
+      background: $color-gray-dark-2;
+      display: inline-block;
+      transition: all $nav-transition-duration ease-out;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::after {
+      top: 8px;
+    }
+
+    &::before {
+      top: -8px;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    transition: all $nav-transition-duration ease-in;
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    transition: all $nav-transition-duration ease-in;
+    top: 1rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-45deg);
   }
 }

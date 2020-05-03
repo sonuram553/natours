@@ -908,11 +908,14 @@ body {
 
 .nav__button {
   background: white;
-  display: inline-block;
-  height: 7rem;
-  width: 7rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 6rem;
+  width: 6rem;
   border-radius: 50%;
   position: fixed;
+  cursor: pointer;
   z-index: 60;
   right: 4.5rem;
   top: 4.5rem;
@@ -921,8 +924,8 @@ body {
 }
 
 .nav__background {
-  height: 6rem;
-  width: 6rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
   position: fixed;
   z-index: 50;
@@ -988,6 +991,62 @@ body {
   transition: opacity 0.3s ease-in;
   opacity: 1;
   width: 100vw;
+}
+
+.nav__icon {
+  position: relative;
+  margin: auto;
+}
+
+.nav__icon, .nav__icon::after, .nav__icon::before {
+  height: 2px;
+  width: 3rem;
+  background: #333;
+  display: inline-block;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.nav__icon::after, .nav__icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav__icon::after {
+  top: 8px;
+}
+
+.nav__icon::before {
+  top: -8px;
+}
+
+.nav__button:hover .nav__icon::before {
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  top: -1rem;
+}
+
+.nav__button:hover .nav__icon::after {
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+  top: 1rem;
+}
+
+.nav__checkbox:checked + .nav__button .nav__icon {
+  background: transparent;
+}
+
+.nav__checkbox:checked + .nav__button .nav__icon::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav__checkbox:checked + .nav__button .nav__icon::after {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .section-about {
