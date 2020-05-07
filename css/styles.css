@@ -1,3 +1,21 @@
+/* 
+
+0     - 600px     phone 
+601   - 900px     tablet portrait
+901   - 1200px    tablet landscape
+1201  - 1800px    desktop (styles without media queries apply to this mode)
+1800  >           big screens
+
+*/
+/* 
+
+Possible values for $breakpoint variable:
+phone
+tab-port
+tab-land
+big-screens
+
+ */
 *,
 *::after,
 *::before {
@@ -10,7 +28,31 @@
 }
 
 html {
+  /* 
+  Browser default font-size is 16px.
+  62.5% of 16px = 10px
+
+  By setting font-size:62.5% at html level, we get 1rem = 10px
+  */
   font-size: 62.5%;
+}
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {

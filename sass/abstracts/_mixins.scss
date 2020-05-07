@@ -12,3 +12,52 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+//Media Query Manager
+
+/* 
+
+0     - 600px     phone 
+601   - 900px     tablet portrait
+901   - 1200px    tablet landscape
+1201  - 1800px    desktop (styles without media queries apply to this mode)
+1800  >           big screens
+
+*/
+
+/* 
+
+Possible values for $breakpoint variable:
+phone
+tab-port
+tab-land
+big-screens
+
+ */
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-screens {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}

@@ -8,7 +8,26 @@
 }
 
 html {
+  /* 
+  Browser default font-size is 16px.
+  62.5% of 16px = 10px
+
+  By setting font-size:62.5% at html level, we get 1rem = 10px
+  */
+
   font-size: 62.5%;
+  
+  @include respond(big-screens) {
+    font-size: 75%; //12px
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //8px
+  }
 }
 
 body {
