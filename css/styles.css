@@ -63,6 +63,12 @@ body {
   padding: 3rem;
 }
 
+@media (max-width: 900px) {
+  body {
+    padding: 0;
+  }
+}
+
 @-webkit-keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -176,6 +182,12 @@ body {
           animation-timing-function: ease-out;
 }
 
+@media (max-width: 600px) {
+  .heading-primary--main {
+    letter-spacing: 1.2rem;
+  }
+}
+
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
@@ -183,6 +195,12 @@ body {
   letter-spacing: 1.75rem;
   -webkit-animation: moveInRight 0.6s ease-out;
           animation: moveInRight 0.6s ease-out;
+}
+
+@media (max-width: 600px) {
+  .heading-primary--sub {
+    letter-spacing: 8px;
+  }
 }
 
 .heading-secondary {
@@ -199,6 +217,12 @@ body {
   transition: -webkit-transform 0.15s ease-out;
   transition: transform 0.15s ease-out;
   transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
+}
+
+@media (max-width: 600px) {
+  .heading-secondary {
+    font-size: 2.2rem;
+  }
 }
 
 .heading-secondary:hover {
@@ -896,6 +920,12 @@ body {
   clear: both;
 }
 
+@media (max-width: 900px) {
+  .row {
+    max-width: 50rem;
+  }
+}
+
 .row:last-of-type {
   margin-bottom: 0;
 }
@@ -910,6 +940,18 @@ body {
 
 .row [class^="col"]:not(:last-of-type) {
   margin-right: 3rem;
+}
+
+@media (max-width: 900px) {
+  .row [class^="col"]:not(:last-of-type) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .row [class^="col"] {
+    width: 100% !important;
+  }
 }
 
 .row .col-1-of-2 {
@@ -945,6 +987,13 @@ body {
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+}
+
+@media (max-width: 600px) {
+  .header {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  }
 }
 
 .header__logo-box {
@@ -1023,6 +1072,13 @@ body {
   float: right;
 }
 
+@media (max-width: 900px) {
+  .footer__copyright {
+    width: 100%;
+    float: initial;
+  }
+}
+
 .nav nav {
   height: 100vh;
   position: fixed;
@@ -1056,6 +1112,13 @@ body {
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.12);
 }
 
+@media (max-width: 900px) {
+  .nav__button {
+    right: 3rem;
+    top: 3rem;
+  }
+}
+
 .nav__background {
   height: 5rem;
   width: 5rem;
@@ -1069,6 +1132,13 @@ body {
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+@media (max-width: 900px) {
+  .nav__background {
+    right: 3.5rem;
+    top: 3.5rem;
+  }
 }
 
 .nav__list {
@@ -1115,8 +1185,8 @@ body {
 .nav__checkbox:checked ~ .nav__background {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  -webkit-transform: scale(60);
-          transform: scale(60);
+  -webkit-transform: scale(70);
+          transform: scale(70);
 }
 
 .nav__checkbox:checked ~ nav {

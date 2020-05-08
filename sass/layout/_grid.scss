@@ -3,6 +3,10 @@
   margin: 0 auto $gutter-vertical;
   @include clearFix;
 
+  @include respond(tab-port){
+    max-width: 50rem;
+  }
+
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -16,6 +20,14 @@
     float: left;
     &:not(:last-of-type) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

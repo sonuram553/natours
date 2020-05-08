@@ -16,7 +16,7 @@ html {
   */
 
   font-size: 62.5%;
-  
+
   @include respond(big-screens) {
     font-size: 75%; //12px
   }
@@ -36,4 +36,8 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
