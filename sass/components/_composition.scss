@@ -11,16 +11,30 @@
 
     &--p1 {
       top: -1.5rem;
+
+      @include respond(tab-port) {
+        top: 0;
+      }
     }
 
     &--p2 {
       top: 4rem;
       right: 0;
+
+      @include respond(tab-port) {
+        top: 0;
+        right: -13rem;
+      }
     }
 
     &--p3 {
       top: 9rem;
       left: 8rem;
+
+      @include respond(tab-port) {
+        top: -3rem;
+        left: 17rem;
+      }
     }
 
     &:hover {

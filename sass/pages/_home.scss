@@ -2,6 +2,10 @@
   background-color: $color-gray-light-1;
   padding: 22rem 0;
   margin-top: -15vh;
+
+  @include respond(tab-port) {
+    padding: 18rem 0 32rem;
+  }
 }
 
 .section-features {
@@ -17,6 +21,10 @@
   background-size: cover;
   transform: skewY(-5deg);
 
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
   > * {
     transform: skewY(5deg);
   }
@@ -26,19 +34,31 @@
   background-color: $color-gray-light-1;
   padding: 22rem 0 12rem;
   margin-top: -7rem;
+
+  @include respond(tab-port) {
+    padding: 17rem 0 8rem;
+  }
 }
 
 .section-stories {
   position: relative;
   padding: 10rem 0;
+
+  @include respond(tab-port){
+    padding: 8rem 0;
+  }
 }
 
 .section-book {
   padding: 12rem 0;
   background: $greenGradient;
 
-  .submit-box{
+  .submit-box {
     margin-top: 4rem;
+  }
+
+  @include respond(tab-port){
+    padding: 10rem 0;
   }
 }
 
