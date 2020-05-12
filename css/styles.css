@@ -708,9 +708,29 @@ body {
   background: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 900px) {
+  .story {
+    width: 75%;
+  }
+}
+
 .story > * {
   -webkit-transform: skewX(12deg);
           transform: skewX(12deg);
+}
+
+@media (max-width: 600px) {
+  .story {
+    width: 95%;
+    padding: 4rem;
+    margin-bottom: 6rem;
+    -webkit-transform: none;
+            transform: none;
+  }
+  .story > * {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .story__shape {
@@ -723,6 +743,13 @@ body {
   margin-right: 3rem;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .story__shape {
+    width: 12rem;
+    height: 12rem;
+  }
 }
 
 .story__image {
@@ -1383,7 +1410,7 @@ body {
 
 @media (max-width: 900px) {
   .section-stories {
-    padding: 8rem 0;
+    padding: 6rem 0;
   }
 }
 
@@ -1399,7 +1426,7 @@ body {
 
 @media (max-width: 900px) {
   .section-book {
-    padding: 10rem 0;
+    padding: 8rem 0;
   }
 }
 
@@ -1416,6 +1443,21 @@ body {
 .book__form {
   width: 50%;
   padding: 4rem;
+}
+
+@media (max-width: 900px) {
+  .book {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 70%, transparent 70%), url(../img/nat-10.jpg);
+  }
+  .book__form {
+    width: 80%;
+  }
 }
 
 /* .grid-test {
