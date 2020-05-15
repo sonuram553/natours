@@ -395,7 +395,6 @@ body {
 }
 
 .composition__photo {
-  width: 55%;
   -webkit-box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.3);
           box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.3);
   border-radius: 2px;
@@ -932,6 +931,14 @@ body {
   transition: opacity 0.2s ease-out;
 }
 
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  .popup {
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+  }
+}
+
 .popup__close:link, .popup__close:visited {
   text-decoration: none;
   font-size: 3rem;
@@ -1081,12 +1088,19 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7)), to(rgba(40, 180, 133, 0.7))), url(../img/hero.jpg);
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/hero.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7)), to(rgba(40, 180, 133, 0.7))), url(../img/hero-small.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+}
+
+@media (resolution: 192dpi) and (min-width: 600px), (min-width: 1800px) {
+  .header {
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.7)), to(rgba(40, 180, 133, 0.7))), url(../img/hero.jpg);
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.7), rgba(40, 180, 133, 0.7)), url(../img/hero.jpg);
+  }
 }
 
 @media (max-width: 600px) {
